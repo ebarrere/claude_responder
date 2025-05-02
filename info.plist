@@ -182,9 +182,8 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>export ANTHROPIC_API_KEY="&lt;KEY&gt;"
+				<string>source .envrc
 
-source .env/bin/activate
 # Get the message from the previous step (selected text)
 message="$1"
 # Get the personality from the selected list item
