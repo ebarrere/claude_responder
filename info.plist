@@ -23,7 +23,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>C44CEBE0-7BD2-4BBB-9B61-2A986898965B</string>
+				<string>4022C52F-B362-4CC2-A081-109D6EB9D833</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -58,9 +58,7 @@
 				<false/>
 			</dict>
 		</array>
-		<key>993C9264-DAC7-4B26-A7A6-179BD2B34688</key>
-		<array/>
-		<key>C44CEBE0-7BD2-4BBB-9B61-2A986898965B</key>
+		<key>4022C52F-B362-4CC2-A081-109D6EB9D833</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -73,6 +71,8 @@
 				<false/>
 			</dict>
 		</array>
+		<key>993C9264-DAC7-4B26-A7A6-179BD2B34688</key>
+		<array/>
 	</dict>
 	<key>createdby</key>
 	<string>elliott@barrere.us</string>
@@ -118,90 +118,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>C44CEBE0-7BD2-4BBB-9B61-2A986898965B</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<true/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>ignoredynamicplaceholders</key>
-				<false/>
-				<key>transient</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>993C9264-DAC7-4B26-A7A6-179BD2B34688</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>source .envrc
-
-# Get the message from the previous step (selected text)
-message="$1"
-# Get the personality from the selected list item
-personality=$(echo "{query}" | cut -d':' -f1)
-
-# Run the Python script with the message and personality
-python3 claude_responder.py "$message" "$personality"</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>11</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>1FBC3B24-B77B-4081-A447-DB4246474C28</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>count</key>
 				<integer>1</integer>
 				<key>keychar</key>
-				<string>⇥</string>
+				<string>c</string>
 				<key>keycode</key>
-				<integer>48</integer>
+				<integer>-1</integer>
 				<key>keymod</key>
-				<integer>0</integer>
+				<integer>1048576</integer>
 				<key>overridewithargument</key>
 				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.dispatchkeycombo</string>
 			<key>uid</key>
-			<string>05923F60-66CB-4A8A-998D-ADCDB109B752</string>
+			<string>4022C52F-B362-4CC2-A081-109D6EB9D833</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -209,7 +140,7 @@ python3 claude_responder.py "$message" "$personality"</string>
 			<key>config</key>
 			<dict>
 				<key>alfredfiltersresults</key>
-				<false/>
+				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
 				<key>argumenttreatemptyqueryasnil</key>
@@ -264,6 +195,79 @@ EOB</string>
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>source .envrc
+
+# Get the message from the previous step (selected text)
+message="$(pbpaste)"
+# Get the personality from the selected list item
+personality=${1}
+
+echo "Responding to message: ${message} as ${personality}" 1&gt;&amp;2
+
+# Run the Python script with the message and personality
+python3 claude_responder.py "$message" "$personality"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>11</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1FBC3B24-B77B-4081-A447-DB4246474C28</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<true/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>993C9264-DAC7-4B26-A7A6-179BD2B34688</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>count</key>
+				<integer>1</integer>
+				<key>keychar</key>
+				<string>⇥</string>
+				<key>keycode</key>
+				<integer>48</integer>
+				<key>keymod</key>
+				<integer>0</integer>
+				<key>overridewithargument</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>05923F60-66CB-4A8A-998D-ADCDB109B752</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -293,21 +297,21 @@ EOB</string>
 		<key>34BB5C99-F7BA-4DDA-A2AD-D8EFE1E2CEBC</key>
 		<dict>
 			<key>xpos</key>
-			<real>195</real>
+			<real>190</real>
 			<key>ypos</key>
-			<real>175</real>
+			<real>170</real>
+		</dict>
+		<key>4022C52F-B362-4CC2-A081-109D6EB9D833</key>
+		<dict>
+			<key>xpos</key>
+			<real>35</real>
+			<key>ypos</key>
+			<real>170</real>
 		</dict>
 		<key>993C9264-DAC7-4B26-A7A6-179BD2B34688</key>
 		<dict>
 			<key>xpos</key>
 			<real>650</real>
-			<key>ypos</key>
-			<real>175</real>
-		</dict>
-		<key>C44CEBE0-7BD2-4BBB-9B61-2A986898965B</key>
-		<dict>
-			<key>xpos</key>
-			<real>50</real>
 			<key>ypos</key>
 			<real>175</real>
 		</dict>

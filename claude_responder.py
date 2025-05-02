@@ -83,4 +83,4 @@ if __name__ == "__main__":
     personality = sys.argv[2]
 
     response = get_claude_response(message, personality)
-    print(response)
+    print(f"{response.strip()}", end="")
