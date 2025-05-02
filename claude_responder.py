@@ -7,7 +7,7 @@ import json
 import requests
 import anthropic
 
-short_response = False
+short_response = True
 force_short_response = True
 
 def get_claude_response(message, personality):
@@ -65,7 +65,8 @@ def get_claude_response(message, personality):
             # Split by period, exclamation, or question mark followed by space
             sentences = re.split(r'[.!?] ', response_text)
             # Return only one sentence with its punctuation
-            return sentences[random.randint(0, len(sentences) - 1)] + ('.' if not sentences[0][-1] in '.!?' else '')
+            sentence_index = random.randint(0, len(sentences) - 1)
+            return sentences[sentence_index] + ('.' if not sentences[sentence_index][-1] in '.!?' else '')
         else:
             return response.content[0].text
 

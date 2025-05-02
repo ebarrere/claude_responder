@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>us.barrere</string>
 	<key>connections</key>
 	<dict>
 		<key>05923F60-66CB-4A8A-998D-ADCDB109B752</key>
@@ -77,11 +77,11 @@
 	<key>createdby</key>
 	<string>elliott@barrere.us</string>
 	<key>description</key>
-	<string></string>
+	<string>A fun workflow to generate a response to given text in a particular style.</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Teams Responder</string>
+	<string>Claude Responder</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -114,27 +114,6 @@
 			<string>13BEDF84-9DD8-454A-BB39-F9E5FDB88984</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>count</key>
-				<integer>1</integer>
-				<key>keychar</key>
-				<string>⇥</string>
-				<key>keycode</key>
-				<integer>48</integer>
-				<key>keymod</key>
-				<integer>0</integer>
-				<key>overridewithargument</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.dispatchkeycombo</string>
-			<key>uid</key>
-			<string>05923F60-66CB-4A8A-998D-ADCDB109B752</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -204,6 +183,27 @@ python3 claude_responder.py "$message" "$personality"</string>
 			<string>1FBC3B24-B77B-4081-A447-DB4246474C28</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>count</key>
+				<integer>1</integer>
+				<key>keychar</key>
+				<string>⇥</string>
+				<key>keycode</key>
+				<integer>48</integer>
+				<key>keymod</key>
+				<integer>0</integer>
+				<key>overridewithargument</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.dispatchkeycombo</string>
+			<key>uid</key>
+			<string>05923F60-66CB-4A8A-998D-ADCDB109B752</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -314,6 +314,10 @@ EOB</string>
 	</dict>
 	<key>userconfigurationconfig</key>
 	<array/>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>0.0.2</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>
